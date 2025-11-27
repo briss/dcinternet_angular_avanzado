@@ -1,0 +1,11 @@
+<p>zona works!</p>
+
+<div>
+    <h1>{{ reloj() }}</h1>
+</div>
+
+<div>
+    @for (curso of cursos$ | async; track $index) {
+        <div>{{ curso.nombre }}</div>
+    }
+</div>
