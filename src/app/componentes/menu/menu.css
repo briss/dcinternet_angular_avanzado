@@ -1,0 +1,60 @@
+h1 {
+    color:white;
+    background-color:black 
+}
+
+nav {
+    width: 100%;
+    background-color: #000000;
+
+}
+
+nav ul {
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: .5em;
+    width: 120px;
+    background-color: #000;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+nav ul li:hover {
+    background-color: green;
+}
+
+nav ul li a:visited {
+    color: #FFF;
+}
+
+.cerror {
+
+    color: #c51244 !important;
+    display: inline-block !important;
+    margin-top: 10px;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.navbar ul a.active {
+    color: rgb(197, 75, 34);
+}
+
+
+.navbar ul a.activebutton{
+    color: #ebbeed;
+    /* background-color: #6d6b6b; */
+    font-size: 1.8em;
+    line-height: 50%;
+}
