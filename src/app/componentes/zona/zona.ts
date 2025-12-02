@@ -1,12 +1,12 @@
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { environment } from '../../../environments/environment';
-import { Curso } from '../../modelo/curso';
+import {AsyncPipe} from '@angular/common';
+import {HttpClient} from '@angular/common/http';
+import {Component, inject, OnInit, signal} from '@angular/core';
+import {environment} from '../../../environments/environment';
+import {Curso} from '../../modelo/curso';
 
 @Component({
   selector: 'app-zona',
-  imports: [ AsyncPipe, JsonPipe ],
+  imports: [ AsyncPipe],
   templateUrl: './zona.html',
   styleUrl: './zona.css',
 })
@@ -14,7 +14,7 @@ export class Zona implements OnInit {
 
   reloj = signal(0);
 
-  private httpClient = inject(HttpClient);
+  private readonly httpClient = inject(HttpClient);
   cursos:Curso[] = [];
 
   x = this.getCursos().subscribe(result => this.cursos = result);
