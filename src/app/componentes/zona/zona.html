@@ -4,8 +4,14 @@
     <h1>{{ reloj() }}</h1>
 </div>
 
-<div>
+<!--div>
     @for (curso of cursos$ | async; track $index) {
+        <div>{{ curso.nombre }}</div>
+    }
+</div-->
+
+<div>
+    @for (curso of cursosSignal(); track $index) {
         <div>{{ curso.nombre }}</div>
     }
 </div>
