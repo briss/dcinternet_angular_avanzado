@@ -1,0 +1,25 @@
+<p>api-resource works!</p>
+
+<div style="background-color: lightblue;">
+    <p>Resource</p>
+    @if (cursosResource.isLoading()) {
+        <p>Cargando...</p>
+    }
+    <ul>
+        @for (curso of cursosResource.value(); track $index) {
+            <li>{{ curso.nombre }}</li>
+        }
+    </ul>
+</div>
+
+<div style="background-color: lightgoldenrodyellow;">
+    <p>Rx Resource</p>
+    @if (cursosRxResource.isLoading()) {
+        <p>Cargando...</p>
+    }
+    <ul>
+        @for (curso of cursosRxResource.value(); track $index) {
+            <li>{{ curso.nombre }}</li>
+        }
+    </ul>
+</div>
