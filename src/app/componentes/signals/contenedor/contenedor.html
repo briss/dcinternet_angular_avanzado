@@ -1,0 +1,19 @@
+<p>contenedor works!</p>
+
+
+<div class="box-container">
+    <app-hijo1 class="box box1"></app-hijo1>
+    <app-hijo2 class="box box2"></app-hijo2>
+</div>
+
+
+<div>
+    <ul>
+    @for (elemento of service.elementos(); track $index) {
+        <li>{{ elemento }}</li>
+    }
+    @empty {
+        <div>Sin datos</div>
+    }
+    </ul>
+</div>

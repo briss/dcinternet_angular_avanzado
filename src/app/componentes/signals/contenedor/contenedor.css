@@ -1,0 +1,20 @@
+.box-container {
+    display: flex; 
+}
+
+.box {
+    width: 50%; 
+    height: 600px; 
+    margin: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.box1 {
+    background-color: rgb(189, 216, 243);
+}
+
+.box2 {
+    background-color: rgb(167, 231, 187); 
+}
