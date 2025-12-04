@@ -1,0 +1,13 @@
+<fieldset>
+    <legend> Forma Reactiva!!!!</legend>
+
+    <form [formGroup]="forma" (ngSubmit)="enviar()">
+        <input type="text"   placeholder="Nombre"      formControlName="nombre" />
+        <input type="text"   placeholder="Categoría"   formControlName="categoria" />
+        <input type="number" placeholder="Duración"    formControlName="duracion" />
+        <input type="text"   placeholder="Descripción" formControlName="descripcion" />
+        <input type="text"   placeholder="Imagen"      formControlName="imagen" />
+
+        <button [class.deshabilitado]="forma.invalid">Registrar</button>
+    </form>
+</fieldset>
