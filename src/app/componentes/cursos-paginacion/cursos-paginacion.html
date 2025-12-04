@@ -1,0 +1,20 @@
+<p>cursos-paginacion works!</p>
+
+<div style="background-color: lightblue;">
+    <ul>
+        @for (curso of cursos.value(); track $index) {
+            <li>{{ curso.nombre }}</li>
+        }
+    </ul>
+
+    <button (click)="previousPage()">Anterior</button>
+    <button (click)="nextPage()">Siguiente</button>
+</div>
+
+<div>
+    <ul>
+        @for (curso of service.cursosHttpResource.value(); track $index) {
+            <li>{{ curso.nombre }}</li>
+        }
+    </ul>
+</div>
