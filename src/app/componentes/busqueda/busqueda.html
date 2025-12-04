@@ -1,1 +1,8 @@
 <p>busqueda works!</p>
+
+<div>
+    Curso buscado:
+    <input type="text" [(ngModel)]="terminoBusqueda" />
+</div>
+
+<app-lista-curso [terminoBusqueda]="terminoBusqueda"></app-lista-curso>

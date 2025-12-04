@@ -1,0 +1,20 @@
+<div>
+    {{terminoBusqueda()}}
+</div>
+
+<div class="container">
+  <div class="column left-column">
+    <fieldset>
+      <legend>Cursos</legend>
+      <ul>
+        @for (curso of cursosFiltro(); track $index) {
+            <li>{{ curso.nombre }}</li>
+        }
+      </ul>
+    </fieldset>
+  </div>
+
+  <div class="column right-column">
+    <app-registro-curso></app-registro-curso>
+  </div>
+</div>
