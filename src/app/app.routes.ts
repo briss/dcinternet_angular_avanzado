@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { App } from './app';
-import { Busqueda } from './componentes/busqueda/busqueda';
-import { NotFound } from './componentes/not-found/not-found';
-import { Zona } from './componentes/zona/zona';
-import { Contenedor } from './componentes/signals/contenedor/contenedor';
 import { ApiResource } from './componentes/api-resource/api-resource';
+import { Busqueda } from './componentes/busqueda/busqueda';
+import { CursosPaginacion } from './componentes/cursos-paginacion/cursos-paginacion';
+import { NotFound } from './componentes/not-found/not-found';
+import { Contenedor } from './componentes/signals/contenedor/contenedor';
+import { Zona } from './componentes/zona/zona';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -12,6 +13,7 @@ export const routes: Routes = [
     { path: 'zona', component: Zona},
     { path: 'contenedor', component: Contenedor },
     { path: 'apiResource', component: ApiResource },
+    { path: 'paginacion', component: CursosPaginacion },
 
     { path: '**', component: NotFound }
 ];
