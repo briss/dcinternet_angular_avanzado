@@ -6,6 +6,7 @@ import { CursosPaginacion } from './componentes/cursos-paginacion/cursos-paginac
 import { NotFound } from './componentes/not-found/not-found';
 import { Contenedor } from './componentes/signals/contenedor/contenedor';
 import { Zona } from './componentes/zona/zona';
+import { BusquedaBD } from './componentes/busqueda/busqueda-bd/busqueda-bd';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'contenedor', component: Contenedor },
     { path: 'apiResource', component: ApiResource },
     { path: 'paginacion', component: CursosPaginacion },
+    { path: 'busquedaBD', component: BusquedaBD },
 
     { path: '**', component: NotFound }
 ];
