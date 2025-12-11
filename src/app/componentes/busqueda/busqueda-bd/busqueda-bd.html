@@ -1,0 +1,10 @@
+<div>
+    Curso buscado:
+    <input type="text" placeholder="Curso" [formControl]="busqueda" />
+</div>
+
+@for (curso of cursos$ | async; track $index) {
+    <div>{{ curso.nombre }}</div>
+}
+
+<app-lista-curso [terminoBusqueda]="terminoBusqueda"></app-lista-curso>
