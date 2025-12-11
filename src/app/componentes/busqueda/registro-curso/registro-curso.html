@@ -2,12 +2,16 @@
     <legend> Forma Reactiva!!!!</legend>
 
     <form [formGroup]="forma" (ngSubmit)="enviar()">
-        <input type="text"   placeholder="Nombre"      formControlName="nombre" />
+        <div>
+            <input type="text" placeholder="Nombre" formControlName="nombre" />
+            <span class="error">{{ errNombre }}</span>
+        </div>
         <input type="text"   placeholder="Categoría"   formControlName="categoria" />
         <input type="number" placeholder="Duración"    formControlName="duracion" />
         <input type="text"   placeholder="Descripción" formControlName="descripcion" />
         <input type="text"   placeholder="Imagen"      formControlName="imagen" />
 
-        <button [class.deshabilitado]="forma.invalid">Registrar</button>
+        <button [class.deshabilitado]="forma.invalid" [disabled]="forma.invalid">Registrar</button>
+        <button type="button" (click)="reset()">Limpiar</button>
     </form>
 </fieldset>
