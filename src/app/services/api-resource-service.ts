@@ -20,8 +20,7 @@ export class ApiResourceService {
 
   private readonly httpClient = inject(HttpClient);
 
-  // Solo nota para uso de observables
-  private cursosObservable$ = this.httpClient.get<Curso[]>(environment.CursosEP);
+  cursosObservable$ = this.httpClient.get<Curso[]>(environment.CursosEP);
 
   cursosRxResource = rxResource({
     stream: () => this.httpClient.get<Curso[]>(environment.CursosEP)

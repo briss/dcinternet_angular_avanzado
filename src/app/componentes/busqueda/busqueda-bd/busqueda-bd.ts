@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ServicioCursos } from '../../../services/servicio-cursos';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { Curso } from '../../../modelo/curso';
 import { AsyncPipe } from '@angular/common';
+import { ApiResourceService } from '../../../services/api-resource-service';
 
 @Component({
   selector: 'app-busqueda-bd',
@@ -14,15 +15,20 @@ import { AsyncPipe } from '@angular/common';
 export class BusquedaBD {
 
   servicio = inject(ServicioCursos);
+  servicioResource = inject(ApiResourceService);
+
   busqueda:FormControl<string | null> = new FormControl('');
 
-  cursos$:Observable<Curso[]> = this.servicio.buscarCurso('');
+  cursos$:Observable<Curso[]> = this.servicioResource.cursosObservable$;
 
   terminoBusqueda = "";
 
   constructor() {
-    this.busqueda.valueChanges.subscribe(value => {
-      this.cursos$ = this.servicio.buscarCurso(value ?? '');
-    });
+    // Usar switchMap permite cancelar las peticiones anteriores cada vez que se
+    // manda un nuevo término
+    this.busqueda.valueChanges.pipe(
+      switchMap(terminoBuscado => 
+        this.cursos$ = this.servicio.buscarCurso(terminoBuscado ?? ''))
+    ).subscribe(value => {});
   }
 }
