@@ -1,0 +1,54 @@
+<h1>Observables: repaso</h1>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">1. Observable creado con <i>new</i></div>
+    <div class="ejemploResult">
+        Usando <i>async</i> pipe:<br />
+        {{ observableNew$ | async }}
+    </div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ observableNewConsole() }}</span>
+    </div>
+</div>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">2. Observable creado con <i>of</i></div>
+    <div class="ejemploResult">
+        Número: {{ numero }}
+    </div>
+    <div class="ejemploResult">
+        Números array:
+        @for (item of numeros; track $index) {
+            <div>{{item}}</div>
+        }
+    </div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ observableOfConsole() }}</span>
+    </div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ observableSwitchMapConsole() }}</span>
+    </div>
+</div>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">3. Observable creado con <i>interval</i></div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ observableIntervalConsole() }}</span>
+    </div>
+</div>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">4. Observable creado con <i>fromEvent</i></div>
+    <div class="ejemploResult">
+        <button #botonObservable >Observable</button>
+    </div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ observableFromEventConsole() }}</span>
+    </div>
+</div>
+

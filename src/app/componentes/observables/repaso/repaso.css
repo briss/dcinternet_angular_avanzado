@@ -1,0 +1,40 @@
+h1 {
+    font: 1.5em sans-serif;
+}
+
+.ejemplo {
+    border: 3px solid brown;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    font-family: sans-serif;
+}
+
+.ejemploTitle {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 2px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+}
+
+.ejemploResult {
+    border: 1px solid brown;
+    padding: 3px;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ejemploConsole {
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    display: block;
+}
+
+.ejemploConsoleOutput {
+    display: block;
+    white-space: pre-wrap;
+}
