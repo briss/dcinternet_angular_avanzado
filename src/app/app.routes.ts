@@ -7,6 +7,7 @@ import { NotFound } from './componentes/not-found/not-found';
 import { Contenedor } from './componentes/signals/contenedor/contenedor';
 import { Zona } from './componentes/zona/zona';
 import { BusquedaBD } from './componentes/busqueda/busqueda-bd/busqueda-bd';
+import { Repaso } from './componentes/observables/repaso/repaso';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path: 'apiResource', component: ApiResource },
     { path: 'paginacion', component: CursosPaginacion },
     { path: 'busquedaBD', component: BusquedaBD },
+    { path: 'observables', component: Repaso },
 
     { path: '**', component: NotFound }
 ];
