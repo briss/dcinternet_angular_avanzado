@@ -1,0 +1,33 @@
+<h1>Observables - Operadores 1</h1>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">1. Fork Join (Paises - Estados)</div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ paisesEstadosConsole() }}</span>
+    </div>
+</div>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">2. Fork Join (candidatos)</div>
+    <div class="ejemploResult">
+        <div>Con <i>subscribe</i> se actualiza individualmente</div>
+        <div>Candidato 1: {{ candidato1Subscriptor() }}</div>
+        <div>Candidato 2: {{ candidato2Subscriptor() }}</div>
+        <div>Candidato 3: {{ candidato3Subscriptor() }}</div>
+    </div>
+    <div class="ejemploResult">
+        <div>Con <i>fork join</i> espera a que todos terminen</div>
+        <div>Candidato 1: {{ candidato1ForkJoin() }}</div>
+        <div>Candidato 2: {{ candidato2ForkJoin() }}</div>
+        <div>Candidato 3: {{ candidato3ForkJoin() }}</div>
+    </div>
+</div>
+
+<div class="ejemplo">
+    <div class="ejemploTitle">3. Fork Join (cursos)</div>
+    <div class="ejemploResult">
+        <span class="ejemploConsole">- - - Console - - -</span>
+        <span class="ejemploConsoleOutput">{{ cursosDestacadosConsole() }}</span>
+    </div>
+</div>
