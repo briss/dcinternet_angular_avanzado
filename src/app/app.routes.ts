@@ -8,6 +8,9 @@ import { Contenedor } from './componentes/signals/contenedor/contenedor';
 import { Zona } from './componentes/zona/zona';
 import { BusquedaBD } from './componentes/busqueda/busqueda-bd/busqueda-bd';
 import { Repaso } from './componentes/observables/repaso/repaso';
+import { forkJoin } from 'rxjs';
+import { ForkJoin } from './componentes/observables/operadores/fork-join/fork-join';
+import { Merge } from './componentes/observables/operadores/merge/merge';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -18,6 +21,8 @@ export const routes: Routes = [
     { path: 'paginacion', component: CursosPaginacion },
     { path: 'busquedaBD', component: BusquedaBD },
     { path: 'observables', component: Repaso },
+    { path: 'obsOpForkJoin', component: ForkJoin },
+    { path: 'obsOpMerge', component: Merge },
 
     { path: '**', component: NotFound }
 ];
