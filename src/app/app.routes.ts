@@ -11,6 +11,8 @@ import { Repaso } from './componentes/observables/repaso/repaso';
 import { forkJoin } from 'rxjs';
 import { ForkJoin } from './componentes/observables/operadores/fork-join/fork-join';
 import { Merge } from './componentes/observables/operadores/merge/merge';
+import { Login } from './componentes/auth/login/login';
+import { Cuentas } from './componentes/auth/cuentas/cuentas';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -23,6 +25,8 @@ export const routes: Routes = [
     { path: 'observables', component: Repaso },
     { path: 'obsOpForkJoin', component: ForkJoin },
     { path: 'obsOpMerge', component: Merge },
+    { path: 'login', component: Login },
+    { path: 'cuentas', component: Cuentas },
 
     { path: '**', component: NotFound }
 ];

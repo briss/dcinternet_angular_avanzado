@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLinkActive, RouterLink, RouterOutlet } from "@angular/router";
+import { Component, inject } from '@angular/core';
+import { RouterLinkActive, RouterLink, RouterOutlet, Router } from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -9,4 +9,13 @@ import { RouterLinkActive, RouterLink, RouterOutlet } from "@angular/router";
 })
 export class Menu {
 
+  private router = inject(Router);
+
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+
+    this.router.navigateByUrl('/login');
+  }
 }
