@@ -1,0 +1,17 @@
+<fieldset>
+    <legend>Autentificar</legend>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+            <input type="text" placeholder="Usuario"
+                    formControlName="usuario" />
+        </div>
+        <div>
+            <input type="password" placeholder="Contraseña"
+                    formControlName="password" />
+        </div>
+        <div>
+            <button [class.deshabilitado]="loginForm.invalid" 
+                    [disabled]="loginForm.invalid">Ingresar</button>
+        </div>
+    </form>
+</fieldset>
