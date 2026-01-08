@@ -1,0 +1,9 @@
+<p>alumnos works!</p>
+
+@if(spinnerService.activo()) {
+    <img src="rotate.svg" />
+}
+
+@for (alumno of alumnos$ | async; track alumno.id) {
+    <div>{{alumno.id}} - {{ alumno.nombre}}</div>
+}
