@@ -14,10 +14,11 @@ export class Cuentas implements OnInit {
     this.authService.getCuentas().subscribe({
       next: cuentas => {
         console.log(cuentas)
-      },
+      }
+      /*,
       error: err => {
         console.log(err);
-      }
+      }*/
     });
   }
 }
