@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   httpClient = inject(HttpClient);
-  
+
   login(data: {usuario:string, password:string}): Observable<{
     token: string,
     success: boolean
@@ -16,7 +16,7 @@ export class AuthService {
     return this.httpClient.post<{
     token: string,
     success: boolean
-  }>("http://localhost:3000/login", 
+  }>("http://localhost:3000/login",
       {
         "usuario": data.usuario,
         "password": data.password
@@ -29,9 +29,11 @@ export class AuthService {
     const usuario = localStorage.getItem('usuario');
 
     return this.httpClient.get<{datos:string}>(
-      `http://localhost:3000/cuentas/${usuario}`, 
+      `http://localhost:3000/cuentas/${usuario}`
+      /*,
       {
         headers: {'Authorization': `Bearer ${token}`}
-    });
+      }*/
+    );
   }
 }
