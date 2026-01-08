@@ -13,6 +13,7 @@ import { ForkJoin } from './componentes/observables/operadores/fork-join/fork-jo
 import { Merge } from './componentes/observables/operadores/merge/merge';
 import { Login } from './componentes/auth/login/login';
 import { Cuentas } from './componentes/auth/cuentas/cuentas';
+import { Alumnos } from './componentes/alumnos/alumnos';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -27,6 +28,7 @@ export const routes: Routes = [
     { path: 'obsOpMerge', component: Merge },
     { path: 'login', component: Login },
     { path: 'cuentas', component: Cuentas },
+    { path: 'alumnos', component: Alumnos },
 
     { path: '**', component: NotFound }
 ];
