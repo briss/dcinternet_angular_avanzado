@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from '../modelo/user';
 
 @Injectable({
   providedIn: 'root',
@@ -9,17 +10,21 @@ export class AuthService {
 
   httpClient = inject(HttpClient);
 
-  login(data: {usuario:string, password:string}): Observable<{
-    token: string,
-    success: boolean
-  }> {
-    return this.httpClient.post<{
-    token: string,
-    success: boolean
-  }>("http://localhost:3000/login",
+  isTokenExpirado = signal(false);
+
+  login(data: {usuario:string, password:string}): Observable<User> {
+    return this.httpClient.post<User>("http://localhost:3000/login",
       {
         "usuario": data.usuario,
         "password": data.password
+      }
+    );
+  }
+
+  refresh(data: {usuario:string}): Observable<User> {
+    return this.httpClient.post<User>("http://localhost:3000/refresh",
+      {
+        "usuario": data.usuario
       }
     );
   }
