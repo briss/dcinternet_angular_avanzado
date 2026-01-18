@@ -1,8 +1,8 @@
 <nav>
     <ul>
         <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/busqueda">Búsqueda</a></li>
-        <li><a routerLink="/busquedaBD">Búsqueda BD</a></li>
+        <!--li><a routerLink="/busqueda">Búsqueda</a></li-->
+        <!--li><a routerLink="/busquedaBD">Búsqueda BD</a></li-->
         <!--li><a routerLink="/observables">Observables</a></li-->
         <!--li><a routerLink="/obsOpForkJoin">Operadores 1</a></li-->
         <!--li><a routerLink="/obsOpMerge">Operadores 2</a></li-->
@@ -14,7 +14,11 @@
         <li><a routerLink="/cuentas">Cuentas</a></li>
         <li><a routerLink="/logout" (click)="logout()">Logout</a></li>
         <!--li><a routerLink="/alumnos">Alumnos</a></li-->
-        <li><a routerLink="/authPadre">Auth Padre</a></li>
+        <!--li><a routerLink="/authPadre">Auth Padre</a></li-->
+        @if (isAdmin()) {
+            <li><a routerLink="/authAdmin">Administrador</a></li>
+        }
+        <li><a routerLink="/authUsuario">Usuario</a></li>
     </ul>
 </nav>
 

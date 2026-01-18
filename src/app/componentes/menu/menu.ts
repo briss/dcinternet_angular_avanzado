@@ -15,7 +15,14 @@ export class Menu {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
+    localStorage.removeItem('rol');
+    localStorage.removeItem('refreshToken');
 
     this.router.navigateByUrl('/login');
+  }
+
+  isAdmin() {
+    const rol = localStorage.getItem('rol');
+    return rol === 'ADMIN';
   }
 }
