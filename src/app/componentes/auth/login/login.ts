@@ -28,11 +28,15 @@ export class Login {
     this.authService.login(
       this.loginForm.value
     ).subscribe({
-      next: resultado => {
-        console.log(resultado);
-        if (resultado && resultado.success) {
+      next: user => {
+        console.log(user);
+        if (user && user.success) {
           localStorage.setItem("usuario", this.loginForm.value.usuario);
-          localStorage.setItem("token", resultado.token);
+          localStorage.setItem("token", user.token);
+          localStorage.setItem("refreshToken", user.refreshToken);
+          localStorage.setItem("rol", user.rol);
+
+          this.authService.isTokenExpirado.set(false);
 
           this.router.navigateByUrl("/cuentas");
         }

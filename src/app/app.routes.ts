@@ -18,6 +18,9 @@ import { authGuard } from './guards/auth-guard';
 import { Padre } from './componentes/auth-parent/padre/padre';
 import { Hijo } from './componentes/auth-parent/hijo/hijo';
 import { vipGuard } from './guards/vip-guard';
+import { Admin } from './componentes/auth/admin/admin';
+import { Usuario } from './componentes/auth/usuario/usuario';
+import { rolesGuard } from './guards/roles-guard';
 
 export const routes: Routes = [
     { path: '', component: App },
@@ -46,6 +49,14 @@ export const routes: Routes = [
             { path: 'cuentas', component: Cuentas }
         ]
     },
+    { path: 'authAdmin', component: Admin, canMatch: [rolesGuard], 
+        data: {
+            roles: ['ADMIN']
+        }},
+    { path: 'authUsuario', component: Usuario, canMatch: [rolesGuard],
+        data: {
+            roles: ['USUARIO', 'ADMIN']
+        }},
 
     { path: '**', component: NotFound }
 ];
