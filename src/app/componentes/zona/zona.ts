@@ -1,4 +1,3 @@
-import {AsyncPipe} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
 import {Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
 import {environment} from '../../../environments/environment';
@@ -7,7 +6,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-zona',
-  imports: [ AsyncPipe],
+  imports: [],
   templateUrl: './zona.html',
   styleUrl: './zona.css',
 })
