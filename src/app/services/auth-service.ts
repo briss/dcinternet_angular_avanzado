@@ -41,4 +41,9 @@ export class AuthService {
       }*/
     );
   }
+
+  getCookies(): Observable<{jwtToken:string}> {
+    return this.httpClient.get<{jwtToken:string}>(
+      'http://localhost:3000/cookies');
+  }
 }
